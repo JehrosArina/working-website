@@ -1,0 +1,574 @@
+
+@use "colors";
+@use "mixins";
+@use "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+//=================================================================
+// Mixins example
+// .hero {
+//   @include mixins.backgroundColor(); /*called the mix background color */
+//   width: 100vw;
+//   height: 100vh;
+//   }
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: 'Inter', sans-serif;
+
+}
+
+.container{
+ /*  $page-width: 1200px;*/
+  width:variables.$page-width;
+  height:1097px;
+  background-color: colors.$FFFFFF;
+
+
+}
+
+.container .header-section{
+ width: variables.$header-width;
+ height: variables.$header-height;
+ background:colors.$darkblue192140;
+}
+
+nav ul li{
+  list-style: none;
+ 
+}
+
+
+.header-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+ 
+  
+}
+
+.nav-container{
+   padding-left: 200px; 
+}
+.nav-container .nav-links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   
+}
+
+.nav-container .nav-links .list-items a{
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+color: colors.$FFFFFF;
+padding: 0 20px; 
+text-decoration: none;
+}
+
+#navigation li{
+    list-style: none;  
+    position: relative;
+}
+
+#navigation a{
+      color: colors.$FFFFFF;
+      transition: all ease-in 0.1s;
+}
+
+/* underline animation using Psedu and set the parent container to realtive position */
+
+#navigation li a:hover,
+#navigation li a:active{
+    color:colors.$YellowDCF10D;
+}
+
+#navigation li a.active::after,
+#navigation li a:hover::after{
+    content:"";
+    width:50%;
+    height:2px;
+    background-color:colors.$YellowDCF10D;
+    position: absolute;
+    // top: 60px;
+    bottom: -5px;
+    left: 20px;
+    transition: 0.3s;
+
+}
+/* End of Navigation design */
+
+.header-logo h3{
+  color: colors.$YellowDCF10D;
+  font-size: 30px;
+  top:16.32px;
+  padding-left:38.49px;
+  
+ 
+}
+
+.signup-login-container{
+    padding-right: 10px;
+   padding-bottom: 20px;
+    
+}
+
+.signup-login-container .signup{
+ font-size: 16px;
+ font-weight: 700;
+ color:colors.$darkGray9D9DB5;
+ text-decoration: none;
+ padding:0 20px;
+}
+
+
+
+.signup-login-container .login-btn{
+width: 86px;
+height: 48px;
+border-radius:  40px;
+color: colors.$Blue0266FF;
+background-color: transparent;
+font-size: 16px;
+border-color: colors.$Blue0266FF;
+cursor: pointer;
+
+}
+
+#mobile i{
+   position: absolute;
+   color:colors.$Blue0266FF;
+   left: 70%;
+   display: none;
+
+}
+
+
+/* End of header styles */
+
+/* Main styles */
+.container-main {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  place-items: center;
+  padding-left: 45px;
+ 
+}
+.container-main .card{
+  border:none;
+}
+.card-box-1{
+ background-color: blue;
+  width:320px;
+  height: 250px;
+  
+}
+
+.card-box-2{
+  background-color: aqua;
+   width:320px;
+   height: 250px;
+     
+}
+
+.card-box-3{
+background-color: bisque;
+    width:320px;
+    height: 250px;
+   
+}
+
+.container-details{
+  top:100px;
+}
+
+.card-box-1{
+  position:relative;
+  overflow: hidden;
+  transition: 0.3s;
+  
+ 
+}
+
+/* Rmove Icon*/ 
+.remove-icon{
+  position:absolute;
+  top: -110px;
+  left:-20px;
+  cursor: pointer;
+     
+}
+
+.remove-icon .x-icon{
+  color:colors.$Blue0266FF;
+}
+
+.card-box-1:hover .remove-icon{
+
+  top:-110px;
+  left:290px;
+ 
+  
+  
+}
+/* End Rmove Icon*/ 
+
+
+.read{
+  position:absolute;
+    left:160px;
+    top:120px;
+    cursor: pointer;
+    display: none;
+    transition: 0.3s;
+   
+}
+
+.card-box-1:hover .read{
+  display: flex;
+    left:160px;
+    top:98px;
+}
+/* animation when image is hover */
+ /* animation when image is hover */
+.card-box-1 .card-box-images> img:last-child{
+    display: none;
+ }
+ .card-box-1:hover .card-box-images > img:nth-child(1){
+    display: none;
+ }
+ .card-box-1:hover .card-box-images> img:last-child{
+    display: block;
+
+ }
+ /* End animation when image is hover */
+.content-details-card{
+  position:absolute;
+  width: 320px;
+  height: 130px;
+  background: colors.$F8F9FC;
+  top: 120px;
+    
+}
+.content-details-card p{
+  font-weight: 700;
+   font-size: 15px;
+   margin-top: 30px;
+   padding:0 10px;
+   padding-bottom: 4px;
+   border-bottom: 1px solid rgb(222, 217, 217);
+   
+}
+
+.badge{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left:20px; 
+  padding-right: 20px;
+  
+  
+}
+.badge i{
+  padding-right: 5px;
+  font-size: 20px;
+  color: colors.$darkGray9D9DB5;
+}
+
+.badge a {
+  color: colors.$darkGray9D9DB5;
+  text-decoration: none;
+}
+.badge span{
+    background-color: colors.$darkGray9D9DB5;
+}
+
+
+/*End of main styles */
+
+
+
+
+
+/* Footer */
+
+
+.footer-section{
+
+  width:variables.$footer-width;
+  height: variables.$footer-height;
+  background: colors.$darkerBlue10131C;
+}
+
+.footer-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 8%;
+}
+.Blog-content{
+
+  display: flex;
+  flex-direction: column  ;
+  align-items: flex-start;
+}
+.Blog-content h3{
+  font-size: 16px;
+  color: colors.$FFFFFF;
+  font-weight: 700;
+}
+
+.Blog-content a{
+  font-size: 12px;
+  color: colors.$OffWhiteD7F8FF;
+  font-weight: 400;
+  text-decoration: none;
+  
+}
+
+.follow-us p{
+  font-size: 12px;
+  font-weight: 400;
+  color:colors.$FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding-left:10px;
+}
+
+.fav-links i{
+  color:colors.$FFFFFF;
+  padding:0 10px;
+  padding-left:10px;
+  font-size: 20px;
+}
+
+.fav-links p{
+    color:colors.$FFFFFF;
+}
+
+/* End of footer */
+
+
+/* MEdia Queries */
+/* min is mo gamay sa 390*/
+@media only screen and (max-width: 320px) 
+{
+
+
+
+.container{
+  flex-direction: column;
+  align-items: center;
+   width:100%;
+}
+
+
+/* header media queries */
+
+
+.container .header-section{
+ width:315px;
+ height: variables.$header-height;
+ background:colors.$darkblue192140;
+ flex-direction: column;
+ margin: 0;
+ padding:0; 
+ margin-left: 25px;
+ position: relative;
+}
+
+
+.header-logo{
+  padding:0;
+  margin:0;
+  position: relative;
+  width: 100%;
+}
+.header-logo h3{
+position: absolute ;
+padding:0;
+margin:0;
+left:17px;
+}
+
+/* fav Icon media */
+
+#mobile{
+position: relative;
+}
+
+#mobile i{
+      display: flex;
+      position: absolute;
+      color:colors.$Blue0266FF;
+      font-size: 24px;
+      padding:0;
+      margin:0;
+      top:-60px;
+      left: 120px;
+}
+
+
+/*NAvigation media*/
+
+.nav-container.active{ 
+
+      .nav-links{
+        display: none;
+      
+      }    
+   
+}
+
+
+.nav-container{
+
+ width:20%;
+ height: 50px;
+ position: absolute;
+ right: 350px;
+display: flex;
+justify-content: space-between;
+}
+
+.nav-links ul{
+width: 10%;
+}
+
+.nav-container .nav-links .list-items a{
+
+font-size: 10px;
+font-weight: 100;
+line-height: 5px;
+color: colors.$FFFFFF;
+text-decoration: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 100px;
+width: 50px;
+
+
+}
+
+
+#navigation li a.active::after,
+#navigation li a:hover::after{
+    content:"";
+    width:40%;
+
+}
+
+
+
+.nav-links ul{
+width: 10%;
+}
+/* End of fav icon media */
+
+/* main content media */
+.container-main{
+   width:365px;
+   padding:0;
+   margin:0;
+   margin-top: 30px;
+}
+
+/* End of main media */
+
+
+.signup-login-container{
+  padding:0;
+  margin:0;
+  display: none;
+}
+/* Fotter media Queries */
+
+.footer-section{
+  margin-left: 30px;
+   width:315px;
+  height: 400px;
+
+ 
+  background: colors.$darkerBlue10131C;
+  flex-direction: column;
+
+}
+.Blog-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+   margin-top:20px;
+   padding:0;
+   width:100%;
+ 
+}
+
+.Blog-content h3{
+  padding-left: 10px;
+}
+.Blog-content .content-details{
+  padding-left: 10px;
+}
+.courses-list{
+    padding-left: 10px;
+}
+
+.fav-links{
+  padding-left:10px;
+}
+.follow-us{
+   width:320px;
+}
+
+.follow-us .follows{
+  padding-left:35px;
+  margin-top: 20px;
+}
+
+.follow-us p{
+
+  font-size: 10px;
+}
+
+.fav-links a{
+ padding-left: 20px;
+}
+.fav-links i{
+ padding:0;
+}
+
+
+
+.disclaimers{
+
+margin-top:-30px;
+margin-left: 20px;
+padding-left:10px;
+}
+}
+
+
+
+ 
+
+  
+
+
+
+
+
+
+
